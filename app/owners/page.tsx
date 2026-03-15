@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Building2,
@@ -11,11 +11,7 @@ import {
   ArrowRight,
   Menu,
   X,
-  Phone,
-  Mail,
-  MapPin,
 } from "lucide-react";
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -108,7 +104,7 @@ export default function OwnersPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-3">
@@ -172,7 +168,7 @@ export default function OwnersPage() {
         ) : null}
       </header>
 
-      <main>
+      <main className="flex-grow">
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.06),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.08),_transparent_30%)]" />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
@@ -237,7 +233,37 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-slate-50/70">
+        <section className="border-y border-slate-200 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-semibold text-slate-950">
+              Investor-Led Property Management
+            </h2>
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+              LongPM was built by an active real estate investor who understands
+              exactly what makes an investment succeed or fail.
+            </p>
+
+            <div className="mt-8 max-w-3xl space-y-5 text-slate-600">
+              <p>Our experience includes:</p>
+
+              <ul className="list-inside list-disc space-y-2">
+                <li>Apartment communities</li>
+                <li>Single-family rental portfolios</li>
+                <li>Commercial retail property</li>
+                <li>Short-term vacation rentals</li>
+              </ul>
+
+              <p>
+                This perspective allows LongPM to approach management decisions
+                with an owner&apos;s mindset instead of a traditional property
+                manager mindset.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-200 bg-slate-50/70">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="About LongPM"
@@ -323,7 +349,9 @@ export default function OwnersPage() {
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
               <Card className="rounded-[2rem] border-slate-200 shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">Core Management Services</h3>
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    Core Management Services
+                  </h3>
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     {services.map((service) => (
                       <div key={service} className="flex items-start gap-3">
@@ -337,7 +365,9 @@ export default function OwnersPage() {
 
               <Card className="rounded-[2rem] border-slate-200 shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">Who we work with</h3>
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    Who we work with
+                  </h3>
                   <div className="mt-6 space-y-4">
                     {fitPoints.map((point) => (
                       <div key={point} className="flex gap-3">
@@ -353,7 +383,9 @@ export default function OwnersPage() {
             <div className="mt-12">
               <Card className="rounded-[2rem] border-slate-200 shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">Not the right fit</h3>
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    Not the right fit
+                  </h3>
                   <div className="mt-6 grid gap-4 md:grid-cols-2">
                     {notFitPoints.map((point) => (
                       <div key={point} className="flex gap-3">
@@ -369,12 +401,13 @@ export default function OwnersPage() {
         </section>
 
         <section id="apply" className="bg-slate-950 text-white">
-          <div className="mx-auto max-w-7xl max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Apply for Management"
               title="Request management consideration."
               text="Because LongPM is selective, prospective clients should submit their property for review."
             />
+
             <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
               <Card className="rounded-[2rem] border-white/10 bg-white/5 text-white shadow-none">
                 <CardContent className="p-8">
@@ -404,13 +437,46 @@ export default function OwnersPage() {
                     className="mt-4 min-h-[140px] rounded-2xl"
                     placeholder="Brief description of the property, current challenges, and why you are exploring a new management partner"
                   />
-                  <Button className="mt-6 rounded-full px-7">Submit Property for Review</Button>
+                  <Button type="submit" className="mt-6 rounded-full px-7">
+                    Submit Property for Review
+                  </Button>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
       </main>
+
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-10 sm:px-6 lg:flex-row lg:px-8">
+          <div className="flex items-center gap-3">
+            <img
+              src="/longpm-logo.png"
+              alt="LongPM logo"
+              className="h-12 w-auto object-contain"
+            />
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
+                LongPM
+              </div>
+              <div className="text-xs text-slate-500">
+                Performance Driven Property Management
+              </div>
+            </div>
+          </div>
+
+          <div className="flex gap-6 text-sm text-slate-600">
+            <a href="/">Home</a>
+            <a href="/owners">Owners</a>
+            <a href="/residents">Residents</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+
+        <div className="pb-6 text-center text-xs text-slate-400">
+          © Long Property Management
+        </div>
+      </footer>
     </div>
   );
 }

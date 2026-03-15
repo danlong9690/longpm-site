@@ -17,7 +17,7 @@ export default function HomePage() {
             />
             <div>
               <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+                Long Property Management
               </div>
               <div className="text-xs text-slate-600">
                 Performance Driven Property Management
