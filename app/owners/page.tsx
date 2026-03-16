@@ -180,7 +180,7 @@ export default function OwnersPage() {
       </header>
 
       <main className="flex-grow">
-        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-200 to-slate-100">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(31,74,110,0.08),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(31,74,110,0.06),_transparent_30%)]" />
 
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
@@ -255,7 +255,7 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-white">
+        <section className="border-y border-slate-200 bg-slate-100">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-semibold text-slate-900">
               Investor-Led Property Management
@@ -285,7 +285,7 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section className="border-b border-slate-200 bg-slate-50/70">
+        <section className="border-b border-slate-200 bg-slate-100">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="About LongPM"
@@ -344,7 +344,7 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section className="bg-white">
+        <section className="bg-slate-100">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Services"
