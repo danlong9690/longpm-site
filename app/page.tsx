@@ -14,7 +14,7 @@ export default function HomePage() {
 
       {/* Soft overlay for readability */}
 
-      <div className="min-h-screen bg-white/90 backdrop-blur-[2px]">
+      <div className="min-h-screen bg-white/75 backdrop-blur-[2px]">
 
         {/* HEADER */}
 
