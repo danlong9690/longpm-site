@@ -86,11 +86,11 @@ function SectionHeading({
     <div className="max-w-3xl space-y-3">
       <Badge
         variant="outline"
-        className="rounded-full border-slate-300 px-4 py-1 text-xs uppercase tracking-[0.18em] text-slate-700"
+        className="rounded-full border-[#b9c9d8] px-4 py-1 text-xs uppercase tracking-[0.18em] text-[#1f4a6e]"
       >
         {eyebrow}
       </Badge>
-      <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
         {title}
       </h2>
       {text ? (
@@ -104,7 +104,7 @@ export default function OwnersPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-3">
@@ -114,8 +114,8 @@ export default function OwnersPage() {
               className="h-14 w-auto object-contain"
             />
             <div className="hidden sm:block">
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-600">
                 Performance Driven Property Management
@@ -128,7 +128,7 @@ export default function OwnersPage() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-700 transition hover:text-slate-950"
+                className="text-sm font-medium text-slate-700 transition hover:text-[#1f4a6e]"
               >
                 {item.label}
               </a>
@@ -136,7 +136,10 @@ export default function OwnersPage() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button asChild className="rounded-full px-5">
+            <Button
+              asChild
+              className="rounded-full px-6 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+            >
               <a href="#apply">Request Consideration</a>
             </Button>
           </div>
@@ -157,20 +160,29 @@ export default function OwnersPage() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#1f4a6e]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
+              <Button
+                asChild
+                className="mt-2 rounded-full bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+              >
+                <a href="#apply" onClick={() => setMenuOpen(false)}>
+                  Request Consideration
+                </a>
+              </Button>
             </div>
           </div>
         ) : null}
       </header>
 
       <main className="flex-grow">
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.06),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.08),_transparent_30%)]" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(31,74,110,0.08),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(31,74,110,0.06),_transparent_30%)]" />
+
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -180,13 +192,13 @@ export default function OwnersPage() {
             >
               <Badge
                 variant="outline"
-                className="rounded-full border-slate-300 px-4 py-1 text-xs uppercase tracking-[0.18em] text-slate-700"
+                className="rounded-full border-[#b9c9d8] px-4 py-1 text-xs uppercase tracking-[0.18em] text-[#1f4a6e]"
               >
                 Owner Services
               </Badge>
 
               <div className="space-y-5">
-                <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+                <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
                   Performance-driven property management for serious investors.
                 </h1>
                 <p className="max-w-xl text-lg leading-8 text-slate-600">
@@ -197,45 +209,55 @@ export default function OwnersPage() {
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg" className="rounded-full px-7">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full px-7 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+                >
                   <a href="#apply">
                     Submit Property for Review
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full px-7">
+
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full border-[#b9c9d8] px-7 text-[#1f4a6e] hover:bg-blue-50"
+                >
                   <a href="/contact">Contact Us</a>
                 </Button>
               </div>
             </motion.div>
 
-            <div className="rounded-[2rem] border border-slate-200 bg-slate-950 p-7 shadow-2xl">
-              <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-8 text-white">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {managedAssets.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.title}
-                        className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                      >
-                        <Icon className="h-6 w-6" />
-                        <div className="mt-4 text-base font-semibold">{item.title}</div>
-                        <div className="mt-2 text-sm leading-6 text-slate-300">
-                          {item.text}
-                        </div>
+            <div className="rounded-[2rem] border border-[#d7e0e8] bg-white shadow-lg">
+              <div className="grid gap-4 p-8 sm:grid-cols-2">
+                {managedAssets.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                    >
+                      <Icon className="h-6 w-6 text-[#1f4a6e]" />
+                      <div className="mt-4 text-base font-semibold text-slate-900">
+                        {item.title}
                       </div>
-                    );
-                  })}
-                </div>
+                      <div className="mt-2 text-sm leading-6 text-slate-600">
+                        {item.text}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-slate-50">
+        <section className="border-y border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-semibold text-slate-950">
+            <h2 className="text-3xl font-semibold text-slate-900">
               Investor-Led Property Management
             </h2>
 
@@ -247,7 +269,7 @@ export default function OwnersPage() {
             <div className="mt-8 max-w-3xl space-y-5 text-slate-600">
               <p>Our experience includes:</p>
 
-              <ul className="list-inside list-disc space-y-2">
+              <ul className="list-inside list-disc space-y-2 marker:text-[#1f4a6e]">
                 <li>Apartment communities</li>
                 <li>Single-family rental portfolios</li>
                 <li>Commercial retail property</li>
@@ -272,7 +294,7 @@ export default function OwnersPage() {
             />
 
             <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="p-8 sm:p-10">
                   <div className="space-y-5 leading-7 text-slate-600">
                     <p>
@@ -307,9 +329,12 @@ export default function OwnersPage() {
                     "Focused on occupancy, retention, maintenance execution, and financial discipline.",
                   ],
                 ].map(([title, text]) => (
-                  <Card key={title} className="rounded-[2rem] border-slate-200 shadow-sm">
+                  <Card
+                    key={title}
+                    className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm"
+                  >
                     <CardContent className="p-7">
-                      <div className="text-lg font-semibold text-slate-950">{title}</div>
+                      <div className="text-lg font-semibold text-slate-900">{title}</div>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
                     </CardContent>
                   </Card>
@@ -319,7 +344,7 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section>
+        <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Services"
@@ -331,12 +356,15 @@ export default function OwnersPage() {
               {managedAssets.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <Card key={item.title} className="rounded-[2rem] border-slate-200 shadow-sm">
+                  <Card
+                    key={item.title}
+                    className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  >
                     <CardContent className="p-7">
-                      <div className="inline-flex rounded-2xl bg-slate-100 p-3">
-                        <Icon className="h-6 w-6 text-slate-900" />
+                      <div className="inline-flex rounded-2xl bg-blue-50 p-3">
+                        <Icon className="h-6 w-6 text-[#1f4a6e]" />
                       </div>
-                      <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                      <h3 className="mt-5 text-xl font-semibold text-slate-900">
                         {item.title}
                       </h3>
                       <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
@@ -347,15 +375,15 @@ export default function OwnersPage() {
             </div>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     Core Management Services
                   </h3>
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     {services.map((service) => (
                       <div key={service} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-slate-900" />
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1f4a6e]" />
                         <span className="text-sm leading-6 text-slate-600">{service}</span>
                       </div>
                     ))}
@@ -363,15 +391,15 @@ export default function OwnersPage() {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     Who we work with
                   </h3>
                   <div className="mt-6 space-y-4">
                     {fitPoints.map((point) => (
                       <div key={point} className="flex gap-3">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-slate-900" />
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1f4a6e]" />
                         <p className="text-sm leading-6 text-slate-600">{point}</p>
                       </div>
                     ))}
@@ -381,15 +409,15 @@ export default function OwnersPage() {
             </div>
 
             <div className="mt-12">
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-950">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     Not the right fit
                   </h3>
                   <div className="mt-6 grid gap-4 md:grid-cols-2">
                     {notFitPoints.map((point) => (
                       <div key={point} className="flex gap-3">
-                        <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-slate-900" />
+                        <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#1f4a6e]" />
                         <p className="text-sm leading-6 text-slate-600">{point}</p>
                       </div>
                     ))}
@@ -400,7 +428,7 @@ export default function OwnersPage() {
           </div>
         </section>
 
-        <section id="apply" className="bg-slate-950 text-white">
+        <section id="apply" className="bg-[#173c59] text-white">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="Apply for Management"
@@ -409,10 +437,10 @@ export default function OwnersPage() {
             />
 
             <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-              <Card className="rounded-[2rem] border-white/10 bg-white/5 text-white shadow-none">
+              <Card className="rounded-[2rem] border-white/10 bg-white/10 text-white shadow-none">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-semibold">What we look for</h3>
-                  <div className="mt-6 space-y-4 text-sm leading-7 text-slate-300">
+                  <div className="mt-6 space-y-4 text-sm leading-7 text-slate-200">
                     <p>Well-positioned properties with ownership willing to maintain standards.</p>
                     <p>Alignment on repairs, upkeep, and resident experience.</p>
                     <p>Owners seeking stronger accountability, not just cheaper management.</p>
@@ -437,7 +465,10 @@ export default function OwnersPage() {
                     className="mt-4 min-h-[140px] rounded-2xl"
                     placeholder="Brief description of the property, current challenges, and why you are exploring a new management partner"
                   />
-                  <Button type="submit" className="mt-6 rounded-full px-7">
+                  <Button
+                    type="submit"
+                    className="mt-6 rounded-full px-7 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+                  >
                     Submit Property for Review
                   </Button>
                 </CardContent>
@@ -452,12 +483,12 @@ export default function OwnersPage() {
           <div className="flex items-center gap-3">
             <img
               src="/longpm-logo.png"
-              alt="LongPM logo"
+              alt="Long Property Management logo"
               className="h-12 w-auto object-contain"
             />
             <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-500">
                 Performance Driven Property Management
