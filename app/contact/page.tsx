@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
-      <header className="border-b border-slate-200 bg-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
+      <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-3">
             <img
@@ -16,8 +16,8 @@ export default function ContactPage() {
               className="h-14 w-auto object-contain"
             />
             <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-600">
                 Performance Driven Property Management
@@ -26,16 +26,16 @@ export default function ContactPage() {
           </a>
 
           <div className="hidden gap-6 text-sm text-slate-600 md:flex">
-            <a href="/" className="transition hover:text-slate-950">
+            <a href="/" className="transition hover:text-[#1f4a6e]">
               Home
             </a>
-            <a href="/owners" className="transition hover:text-slate-950">
+            <a href="/owners" className="transition hover:text-[#1f4a6e]">
               Owners
             </a>
-            <a href="/residents" className="transition hover:text-slate-950">
+            <a href="/residents" className="transition hover:text-[#1f4a6e]">
               Residents
             </a>
-            <a href="/contact" className="transition hover:text-slate-950">
+            <a href="/contact" className="transition hover:text-[#1f4a6e]">
               Contact
             </a>
           </div>
@@ -45,11 +45,11 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl flex-grow px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <div className="inline-flex rounded-full border border-slate-300 px-4 py-1 text-xs uppercase tracking-[0.18em] text-slate-700">
+            <div className="inline-flex rounded-full border border-[#b9c9d8] px-4 py-1 text-xs uppercase tracking-[0.18em] text-[#1f4a6e]">
               Contact LongPM
             </div>
 
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
               Start the conversation.
             </h1>
 
@@ -59,13 +59,13 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-10 grid gap-4">
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="rounded-2xl bg-slate-100 p-3">
-                    <Building2 className="h-5 w-5 text-slate-900" />
+                  <div className="rounded-2xl bg-blue-50 p-3">
+                    <Building2 className="h-5 w-5 text-[#1f4a6e]" />
                   </div>
                   <div>
-                    <div className="text-base font-semibold text-slate-950">
+                    <div className="text-base font-semibold text-slate-900">
                       Property Owners
                     </div>
                     <p className="mt-1 text-sm leading-6 text-slate-600">
@@ -76,13 +76,13 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="rounded-2xl bg-slate-100 p-3">
-                    <Home className="h-5 w-5 text-slate-900" />
+                  <div className="rounded-2xl bg-blue-50 p-3">
+                    <Home className="h-5 w-5 text-[#1f4a6e]" />
                   </div>
                   <div>
-                    <div className="text-base font-semibold text-slate-950">
+                    <div className="text-base font-semibold text-slate-900">
                       Residents & Prospective Residents
                     </div>
                     <p className="mt-1 text-sm leading-6 text-slate-600">
@@ -93,13 +93,13 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+              <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="rounded-2xl bg-slate-100 p-3">
-                    <Mail className="h-5 w-5 text-slate-900" />
+                  <div className="rounded-2xl bg-blue-50 p-3">
+                    <Mail className="h-5 w-5 text-[#1f4a6e]" />
                   </div>
                   <div>
-                    <div className="text-base font-semibold text-slate-950">
+                    <div className="text-base font-semibold text-slate-900">
                       Contact Form Preferred
                     </div>
                     <p className="mt-1 text-sm leading-6 text-slate-600">
@@ -112,10 +112,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+          <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
             <CardContent className="p-8 sm:p-10">
               <div className="mb-6">
-                <h2 className="text-2xl font-semibold text-slate-950">
+                <h2 className="text-2xl font-semibold text-slate-900">
                   Send a Message
                 </h2>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
@@ -136,7 +136,10 @@ export default function ContactPage() {
                 />
               </div>
 
-              <Button type="submit" className="mt-6 rounded-full px-7">
+              <Button
+                type="submit"
+                className="mt-6 rounded-full px-7 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+              >
                 Send Message
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -150,12 +153,12 @@ export default function ContactPage() {
           <div className="flex items-center gap-3">
             <img
               src="/longpm-logo.png"
-              alt="LongPM logo"
+              alt="Long Property Management logo"
               className="h-12 w-auto object-contain"
             />
             <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-500">
                 Performance Driven Property Management

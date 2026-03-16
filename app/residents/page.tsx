@@ -58,7 +58,7 @@ export default function ResidentsPage() {
   }, [search]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-3">
@@ -68,8 +68,8 @@ export default function ResidentsPage() {
               className="h-14 w-auto object-contain"
             />
             <div className="hidden sm:block">
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-600">
                 Performance Driven Property Management
@@ -82,12 +82,21 @@ export default function ResidentsPage() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-700 transition hover:text-slate-950"
+                className="text-sm font-medium text-slate-700 transition hover:text-[#1f4a6e]"
               >
                 {item.label}
               </a>
             ))}
           </nav>
+
+          <div className="hidden lg:block">
+            <Button
+              asChild
+              className="rounded-full px-6 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+            >
+              <a href="/contact">Contact</a>
+            </Button>
+          </div>
 
           <button
             className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-2 lg:hidden"
@@ -105,12 +114,20 @@ export default function ResidentsPage() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950"
+                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#1f4a6e]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
+              <Button
+                asChild
+                className="mt-2 rounded-full bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+              >
+                <a href="/contact" onClick={() => setMenuOpen(false)}>
+                  Contact
+                </a>
+              </Button>
             </div>
           </div>
         ) : null}
@@ -120,18 +137,18 @@ export default function ResidentsPage() {
         <div className="max-w-3xl">
           <Badge
             variant="outline"
-            className="rounded-full border-slate-300 px-4 py-1 text-xs uppercase tracking-[0.18em] text-slate-700"
+            className="rounded-full border-[#b9c9d8] px-4 py-1 text-xs uppercase tracking-[0.18em] text-[#1f4a6e]"
           >
             Resident Resources
           </Badge>
 
-          <h1 className="mt-6 text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+          <h1 className="mt-6 text-5xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
             Find Your Next Home
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Browse available properties managed by LongPM and submit
-            rental applications online.
+            Browse available properties managed by LongPM and submit rental
+            applications online.
           </p>
         </div>
 
@@ -146,7 +163,10 @@ export default function ResidentsPage() {
             />
           </div>
 
-          <Button variant="outline" className="rounded-full px-6">
+          <Button
+            variant="outline"
+            className="rounded-full border-[#b9c9d8] px-6 text-[#1f4a6e] hover:bg-blue-50"
+          >
             Resident Review Portal
           </Button>
         </div>
@@ -155,16 +175,16 @@ export default function ResidentsPage() {
           {filteredProperties.map((property) => (
             <Card
               key={property.name}
-              className="overflow-hidden rounded-[2rem] border-slate-200 shadow-sm"
+              className="overflow-hidden rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-slate-200 via-slate-100 to-slate-50">
-                <Home className="h-10 w-10 text-slate-400" />
+              <div className="flex h-48 items-center justify-center bg-gradient-to-br from-blue-50 via-slate-50 to-white">
+                <Home className="h-10 w-10 text-[#1f4a6e]" />
               </div>
 
               <CardContent className="p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-xl font-semibold text-slate-950">
+                    <div className="text-xl font-semibold text-slate-900">
                       {property.name}
                     </div>
                     <div className="mt-1 text-sm text-slate-500">
@@ -172,7 +192,9 @@ export default function ResidentsPage() {
                     </div>
                   </div>
 
-                  <Badge className="rounded-full">{property.status}</Badge>
+                  <Badge className="rounded-full bg-[#1f4a6e] text-white hover:bg-[#1f4a6e]">
+                    {property.status}
+                  </Badge>
                 </div>
 
                 <div className="mt-5 text-sm font-medium text-slate-900">
@@ -209,8 +231,13 @@ export default function ResidentsPage() {
                 </div>
 
                 <div className="mt-6 flex gap-3">
-                  <Button className="rounded-full">Apply Now</Button>
-                  <Button variant="outline" className="rounded-full">
+                  <Button className="rounded-full bg-[#1f4a6e] text-white hover:bg-[#173c59]">
+                    Apply Now
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="rounded-full border-[#b9c9d8] text-[#1f4a6e] hover:bg-blue-50"
+                  >
                     Details
                   </Button>
                 </div>
@@ -220,11 +247,11 @@ export default function ResidentsPage() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+          <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
             <CardContent className="p-8">
               <div className="flex items-center gap-3">
-                <Star className="h-5 w-5" />
-                <h3 className="text-xl font-semibold text-slate-950">
+                <Star className="h-5 w-5 text-[#1f4a6e]" />
+                <h3 className="text-xl font-semibold text-slate-900">
                   Resident review submission
                 </h3>
               </div>
@@ -241,16 +268,19 @@ export default function ResidentsPage() {
                   className="min-h-[120px] rounded-2xl"
                   placeholder="Share your experience"
                 />
-                <Button type="submit" className="w-fit rounded-full px-6">
+                <Button
+                  type="submit"
+                  className="w-fit rounded-full px-6 bg-[#1f4a6e] text-white hover:bg-[#173c59]"
+                >
                   Submit Review
                 </Button>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="rounded-[2rem] border-slate-200 shadow-sm">
+          <Card className="rounded-[2rem] border-[#d7e0e8] bg-white shadow-sm">
             <CardContent className="p-8">
-              <h3 className="text-xl font-semibold text-slate-950">
+              <h3 className="text-xl font-semibold text-slate-900">
                 Resident tools
               </h3>
 
@@ -281,12 +311,12 @@ export default function ResidentsPage() {
           <div className="flex items-center gap-3">
             <img
               src="/longpm-logo.png"
-              alt="LongPM logo"
+              alt="Long Property Management logo"
               className="h-12 w-auto object-contain"
             />
             <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-900">
-                LongPM
+              <div className="text-sm font-semibold tracking-[0.05em] text-slate-900">
+                Long Property Management
               </div>
               <div className="text-xs text-slate-500">
                 Performance Driven Property Management
